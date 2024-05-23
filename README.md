@@ -15,7 +15,7 @@ But if time runs out thats okay you will be able to reset and try again.
 
 But winning and losing is not all there is to this challenge.
 
-Hone your mind and try to keep your accuracy at 100% and the shortest time possible!
+Hone your mind and try to keep your accuracy at 100% in the shortest time possible!
 
 ## Features
 
