@@ -82,7 +82,7 @@ resetBtn.addEventListener('click', () => {
     clearInterval(countdownTimer)
     playing = false
     // based on condition of game clear added elements
-    if (targets === 0) {
+    if (targets === 0 && timeEls.innerHTML !== '00:00') {
         win.remove()
     } else if (timeEls.innerHTML === '00:00') {
         loss.remove()
