@@ -20,7 +20,7 @@ body {
     padding: 8px;
 }
 
-.top span {
+#targets, #time, #hits, #accuracy {
     color: #3792E6;
 }
 
@@ -42,9 +42,9 @@ body {
     justify-content: space-evenly;
 }
 
-.bottom span {
+/* .bottom span {
     color: #3792E6;
-}
+} */
 
 .btn {
     color: #D4DAED;
@@ -80,4 +80,14 @@ body {
     border-radius: 50%;
     position: absolute;
     cursor: pointer;
+}
+
+#win {
+    color: #D4DAED;
+    font-size: 110px;
+}
+
+#loss {
+    color: #D4DAED;
+    font-size: 110px; 
 }

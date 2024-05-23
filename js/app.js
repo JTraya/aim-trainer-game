@@ -5,8 +5,8 @@ const timeTextEl = document.querySelector('.timeText')
 const targetsEls = document.querySelector('#targets')
 const game = document.querySelector('#game')
 
-let time = 60
-let targets = 30
+let time = 30
+let targets = 30 
 let countdownTimer;
 
 
@@ -30,6 +30,10 @@ startBtn.addEventListener('click', () => {
             targetsEls.innerHTML = targets
             circle.remove();
             // You Win!
+            const win = document.createElement('h1')
+            win.id = 'win'
+            win.innerText = 'You Win!'
+            document.getElementById('game').appendChild(win)
         } else {
         positionCircleRandomly(circle);
         targetsEls.innerHTML = targets
@@ -40,10 +44,15 @@ startBtn.addEventListener('click', () => {
     // Begin the countdown timer
      countdownTimer = setInterval(function(){
         if (time === 0) {
-            // lose/game over
             circle.remove();
             clearInterval(countdownTimer);
-            timeTextEl.innerHTML = "Time's Up!";
+            timeEls.innerHTML = '00:00';  
+            // timeTextEl.innerHTML = "Time's Up!";
+            // Lose/Game Over
+            const loss = document.createElement('h1')
+            loss.id = 'loss'
+            loss.innerText = 'Game Over'
+            document.getElementById('game').appendChild(loss)
         } else {
             timeEls.innerHTML = '00:' + time;  
         }
@@ -54,18 +63,32 @@ startBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', () => {
     startBtn.style.visibility = 'visible'
-    circle.remove()
     clearInterval(countdownTimer)
-    timeEls.innerHTML = '00:60';  
+    if (targets === 0) {
+        win.remove()
+    } else if (timeEls.innerHTML === '00:00') {
+        loss.remove()
+    } else {
+        circle.remove()
+    }
+    targets = 30
+    time = 30
+    timeEls.innerHTML = '00:30';  
     targetsEls.innerHTML = '30'
-    
+
+    // if (targets !== 0 ) {
+    //     circle.remove()
+    // } else if (targets === 0) {
+    //     win.remove()
+    //     targetsEls.innerHTML = '30'
+    // } 
 })
 
 function getRandomPosition(){
     const x = Math.floor(Math.random() * (game.getBoundingClientRect().width - 100));
     const y = Math.floor(Math.random() * (game.getBoundingClientRect().height - 100));
     return { x, y };
-
+    
 }
 
 function positionCircleRandomly(circle) {
@@ -75,9 +98,9 @@ function positionCircleRandomly(circle) {
 
 }
 
-console.dir(startBtn)
+// console.dir(win)
 // Note for tmrw:
 // Fix bugs (of course) target window**
 // Setup Reset button
-// Add in Win/Game Over text those fulfilling conditions
+//// Add in Win/Game Over text those fulfilling conditions
 // Research and setup hits and accuracy
