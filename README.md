@@ -22,3 +22,4 @@ Hone your mind and try to keep your accuracy at 100% in the shortest time possib
 - **Accuracy**: Your percentage of hit targets and missed targets will display 
 - **Time**: Game timer is displayed, try to complete the challenge as fast as possible
 - **Repeatable**: Reset button allows game to reset for repeated attempts
+- **Mobile Friendly**: Added features make this challenge playable on mobile devices too!
