@@ -92,6 +92,8 @@ body {
     font-size: 110px; 
 }
 
+
+
 @media (max-width: 700px) {
     #circle {
         width: 80px;
@@ -104,5 +106,12 @@ body {
 
     #loss {
         font-size: 65px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 25px;
     }
 }
